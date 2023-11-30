@@ -1,0 +1,44 @@
+theme = "solarized_light"
+
+[editor]
+line-number = "relative"
+bufferline = "multiple"
+mouse = false
+auto-save = true
+rulers = [80]
+cursorline = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.whitespace.render]
+space = "none"
+tab = "none"
+newline = "all"
+
+[editor.whitespace.characters]
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+
+[keys.normal]l
+esc = ["collapse_selection", "keep_primary_selection"]
+"S-]" = "goto_next_function"
+"S-[" = "goto_prev_function"
+"]" = { "]" = "goto_next_paragraph"}
+"[" = { "[" = "goto_prev_paragraph"}
+
+[keys.normal.space]
+"space" = "file_picker_in_current_directory"
